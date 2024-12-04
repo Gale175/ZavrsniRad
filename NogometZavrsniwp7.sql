@@ -13,9 +13,8 @@ sifra int not null primary key identity(1,1),
 naziv varchar(80) not null,
 vrsta varchar(50) not null,
 sezona datetime not null,
-mjesto_odigravanja varchar(80),
-pobjednik int not null,
-najbolji_igrac int,
+pobjednik varchar(80) not null,
+najbolji_igrac varchar(100)
 );
 
 create table timovi(
@@ -40,3 +39,10 @@ create table sezone(
 tim int not null references timovi(sifra),
 igrac int not null references igraci(sifra)
 );
+
+select * from natjecanja;
+
+insert into natjecanja
+(naziv,vrsta,sezona,pobjednik,najbolji_igrac) values
+('Liga prvaka', 'Klupsko prvenstvno','2023','Real Madrid','Vinicius Junior');
+
