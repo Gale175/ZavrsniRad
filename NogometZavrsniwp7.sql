@@ -1,5 +1,4 @@
 ﻿use master;
-
 go
 drop database if exists nogomet_zavr;
 go
@@ -12,6 +11,7 @@ create table natjecanja(
 sifra int not null primary key identity(1,1),
 naziv varchar(80) not null,
 vrsta varchar(50) not null,
+drzava varchar (80) not null,
 sezona datetime not null,
 pobjednik varchar(80) not null,
 najbolji_igrac varchar(100)
@@ -43,18 +43,43 @@ igrac int not null references igraci(sifra)
 select * from natjecanja;
 
 insert into natjecanja
-(naziv,vrsta,sezona,pobjednik,najbolji_igrac) values
-('Liga prvaka','Klupsko prvenstvo','2023','Real Madrid','Vinicius Junior'),
-('LaLiga','Klupsko prvenstvo','2023','Real Madrid','Vinicius Junior');
+(naziv,vrsta,drzava,sezona,pobjednik,najbolji_igrac) values
+('Liga prvaka','Klupsko prvenstvo','Europa','2023','Real Madrid','Vinicius Junior'),
+('Premier League','Klupsko prvenstvo','Engleska','2023','Manchester City','Kevin de Bruyne'),
+('Francuska Liga','Klupsko prvenstvo','Francuska','2023','Paris Saint Germain','Kylian Mbappe'),
+('La Liga','Klupsko prvenstvo','Španjolska','2023','Real Madrid','Vinicius Junior'),
+('Serie A','Klupsko prvenstvo','Italija','2023','Real Madrid','Vinicius Junior'),
+('Bundesliga','Klupsko prvenstvo','Njemačka','2023','Real Madrid','Vinicius Junior');
 
 select * from igraci;
 
 insert into igraci
 (ime,prezime,dob,golovi,asistencije) values
-('Vinicius','Junior','21',23,24);
+('Vinicius','Junior','21',23,24),
+('Thibaut','Courtois', 33, 0, 0),
+('Kepa','Arrizabalaga', 31, 0, 0),
+('Andriy','Lunin', 28, 0, 1),
+('Dani','Carvajal', 32, 10, 7),
+('Antonio','Rudiger', 30, 4, 1),
+('Luka','Modrić', 39, 8, 18),
+('Toni','Kroos', 34, 10, 18),
+('Jude','Bellingham', 23, 18, 14),
+('Kylian','Mbappe', 23, 24, 26),
+('Ederson','Moreira', 33, 0, 0),
+('Ruben','Dias', 28, 5, 2),
+('Josko','Gvardiol', 21, 6, 10),
+('Kevin','De Bruyne', 30, 14, 19),
+('Rodri','Ivan', 30, 2, 4),
+('Bernardo','Silva',28,10, 13),
+('Erling','Haaland', 22, 29, 14);
 
 insert into timovi
 (naziv,klub_repka,natjecanje,trener,stadion) values
-('Real Madrid',1,2,'Carlo Ancelotti','Santiago Bernabeu');
+('Real Madrid',1,4,'Carlo Ancelotti','Santiago Bernabeu'),
+('Manchester City',1,2,'Pep Guardiola','Etihad'),
+('Barcelona',1,4,'Xavi Hernandez','Camp Nou'),
+('Bayern Munich',1,6,'Hansi Flick','Alianz Arena'),
+('Juventus',1,5,'Thiago Motta','Stadio Olympico'),
+('Paris Saint Germain',1,3,'Luis Enrique','Parc de princes');
 
 select * from timovi;
