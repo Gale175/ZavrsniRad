@@ -40,7 +40,6 @@ tim int not null references timovi(sifra),
 igrac int not null references igraci(sifra)
 );
 
-select * from natjecanja;
 
 insert into natjecanja
 (naziv,vrsta,drzava,sezona,pobjednik,najbolji_igrac) values
@@ -50,8 +49,6 @@ insert into natjecanja
 ('La Liga','Klupsko prvenstvo','Španjolska','2023','Real Madrid','Vinicius Junior'),
 ('Serie A','Klupsko prvenstvo','Italija','2023','Real Madrid','Vinicius Junior'),
 ('Bundesliga','Klupsko prvenstvo','Njemačka','2023','Real Madrid','Vinicius Junior');
-
-select * from igraci;
 
 insert into igraci
 (ime,prezime,dob,golovi,asistencije) values
@@ -82,4 +79,20 @@ insert into timovi
 ('Juventus',1,5,'Thiago Motta','Stadio Olympico'),
 ('Paris Saint Germain',1,3,'Luis Enrique','Parc de princes');
 
+insert into timovi_igraci
+(tim,igrac) values
+(1,1),
+(1,2),
+(1,7),
+(1,9),
+(2,11),
+(2,12),
+(2,13),
+(2,14),
+(2,15),
+(2,17);
+
+select * from igraci;
+select * from natjecanja;
 select * from timovi;
+select * from timovi_igraci;
