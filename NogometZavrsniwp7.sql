@@ -2,7 +2,7 @@
 go
 drop database if exists nogomet_zavr;
 go
-create database nogomet_zavr;
+create database nogomet_zavr collate Croatian_CI_AS;
 go
 use nogomet_zavr;
 go
@@ -12,7 +12,7 @@ sifra int not null primary key identity(1,1),
 naziv varchar(80) not null,
 vrsta varchar(50) not null,
 drzava varchar (80) not null,
-sezona datetime not null,
+sezona varchar(10) not null,
 pobjednik varchar(80) not null,
 najbolji_igrac varchar(100)
 );
@@ -20,7 +20,6 @@ najbolji_igrac varchar(100)
 create table timovi(
 sifra int not null primary key identity(1,1),
 naziv varchar(80) not null,
-klub_repka bit not null,
 natjecanje int not null references natjecanja(sifra),
 trener varchar(80),
 stadion varchar(80)
@@ -43,17 +42,16 @@ igrac int not null references igraci(sifra)
 
 insert into natjecanja
 (naziv,vrsta,drzava,sezona,pobjednik,najbolji_igrac) values
-('Liga prvaka','Klupsko prvenstvo','Europa','2024','Real Madrid','Vinicius Junior'),
-('Premier League','Klupsko prvenstvo','Engleska','2024','Manchester City','Kevin de Bruyne'),
-('Francuska Liga','Klupsko prvenstvo','Francuska','2024','Paris Saint Germain','Kylian Mbappe'),
-('La Liga','Klupsko prvenstvo','Španjolska','2024','Real Madrid','Vinicius Junior'),
-('Serie A','Klupsko prvenstvo','Italija','2024','Internacionale FC','Lautaro Martinez'),
-('Bundesliga','Klupsko prvenstvo','Njemačka','2024','Bayer Leverkusen','Florian Wirtz'),
-('Svjetsko Prvenstvno 2022.','Internacionalno','Qatar','2022','Argentina','Lionel Messi');
+('Liga prvaka','Klupsko prvenstvo','Europa','2023/2024','Real Madrid','Vinicius Junior'),
+('Premier League','Klupsko prvenstvo','Engleska','2023/2024','Manchester City','Kevin de Bruyne'),
+('Francuska Liga','Klupsko prvenstvo','Francuska','2023/2024','Paris Saint Germain','Kylian Mbappe'),
+('La Liga','Klupsko prvenstvo','Španjolska','2023/2024','Real Madrid','Vinicius Junior'),
+('Serie A','Klupsko prvenstvo','Italija','2023/2024','Internacionale FC','Lautaro Martinez'),
+('Bundesliga','Klupsko prvenstvo','Njemačka','2023/2024','Bayer Leverkusen','Florian Wirtz');
 
 insert into igraci
 (ime,prezime,dob,golovi,asistencije) values
-('Vinicius','Junior','21',23,24),
+('Vinicius','Junior',21,23,24),
 ('Thibaut','Courtois', 33, 0, 0),
 ('Kepa','Arrizabalaga', 31, 0, 0),
 ('Andriy','Lunin', 28, 0, 1),
@@ -77,17 +75,16 @@ insert into igraci
 ('Lionel','Messi', 37, 20, 17);
 
 insert into timovi
-(naziv,klub_repka,natjecanje,trener,stadion) values
-('Real Madrid',2,4,'Carlo Ancelotti','Santiago Bernabeu'),
-('Manchester City',2,2,'Pep Guardiola','Etihad'),
-('Barcelona',2,4,'Xavi Hernandez','Camp Nou'),
-('Bayern Munich',2,6,'Hansi Flick','Alianz Arena'),
-('Juventus',2,5,'Thiago Motta','Stadio Olympico'),
-('Paris Saint Germain',2,3,'Luis Enrique','Parc de princes'),
-('Real Madrid',2,1,'Carlo Ancelotti','Santiago Bernabeu'),
-('Internazionale FC',2,5,'Simone Inzaghi','Giuseppe Meazza'),
-('Bayer Leverkusen',2,6,'Xabi Alonso','BayArena'),
-('Hrvatska',1,6,'Zlatko Dalić','Maksimir');
+(naziv,natjecanje,trener,stadion) values
+('Real Madrid',4,'Carlo Ancelotti','Santiago Bernabeu'),
+('Manchester City',2,'Pep Guardiola','Etihad'),
+('Barcelona',4,'Xavi Hernandez','Camp Nou'),
+('Bayern Munich',6,'Hansi Flick','Alianz Arena'),
+('Juventus',5,'Thiago Motta','Stadio Olympico'),
+('Paris Saint Germain',3,'Luis Enrique','Parc de princes'),
+('Real Madrid',1,'Carlo Ancelotti','Santiago Bernabeu'),
+('Internazionale FC',5,'Simone Inzaghi','Giuseppe Meazza'),
+('Bayer Leverkusen',6,'Xabi Alonso','BayArena');
 
 insert into timovi_igraci
 (tim,igrac) values
