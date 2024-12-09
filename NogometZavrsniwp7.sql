@@ -88,7 +88,14 @@ insert into timovi
 ('Internazionale FC',5,'Simone Inzaghi','Giuseppe Meazza'),
 ('Bayer Leverkusen',6,'Xabi Alonso','BayArena'),
 ('OL Marseille',3,'Roberto de Zerbi','Orange Velodrome'),
-('OL Lyon',3,'Fabio Grosso','Parc Olympique Lyonnais');
+('OL Lyon',3,'Fabio Grosso','Parc Olympique Lyonnais'),
+('Manchester City',1,'Pep Guardiola','Etihad'),
+('Barcelona',1,'Xavi Hernandez','Camp Nou'),
+('Bayern Munich',1,'Hansi Flick','Alianz Arena'),
+('Juventus',1,'Thiago Motta','Stadio Olympico'),
+('Paris Saint Germain',1,'Luis Enrique','Parc de princes'),
+('Internazionale FC',1,'Simone Inzaghi','Giuseppe Meazza'),
+('Bayer Leverkusen',1,'Xabi Alonso','BayArena');
 
 insert into timovi_igraci
 (tim,igrac) values
@@ -108,6 +115,6 @@ insert into timovi_igraci
 (8,18);
 
 select * from igraci;
-select * from timovi;
+select * from timovi where natjecanje=1;
 select * from natjecanja;
 select * from timovi_igraci;
