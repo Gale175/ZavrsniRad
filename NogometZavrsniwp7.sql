@@ -103,7 +103,9 @@ insert into timovi_igraci
 (2,15),
 (3,19),
 (11,21),
-(10,23);
+(10,23),
+(8,24),
+(8,18);
 
 select * from igraci;
 select * from timovi;
