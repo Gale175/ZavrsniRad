@@ -29,7 +29,7 @@ create table igraci(
 sifra int not null primary key identity(1,1),
 ime varchar(50) not null,
 prezime varchar(80) not null,
-dob int,
+dob int not null,
 golovi int not null,
 asistencije int not null
 );
