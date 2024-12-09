@@ -115,6 +115,6 @@ insert into timovi_igraci
 (8,18);
 
 select * from igraci;
-select * from timovi where natjecanje=1;
+select * from timovi;
 select * from natjecanja;
 select * from timovi_igraci;
