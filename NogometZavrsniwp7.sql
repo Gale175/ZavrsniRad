@@ -72,7 +72,9 @@ insert into igraci
 ('Lamine','Yamal', 17, 10, 11),
 ('Robert','Lewandovski', 34, 24, 17),
 ('Dejan','Lovren', 36, 3, 2),
-('Lionel','Messi', 37, 20, 17);
+('Lionel','Messi', 37, 20, 17),
+('Mason','Greenwood', 22, 10, 7),
+('Hakan','Chalhanoglu', 29, 10, 13);
 
 insert into timovi
 (naziv,natjecanje,trener,stadion) values
@@ -84,7 +86,9 @@ insert into timovi
 ('Paris Saint Germain',3,'Luis Enrique','Parc de princes'),
 ('Real Madrid',1,'Carlo Ancelotti','Santiago Bernabeu'),
 ('Internazionale FC',5,'Simone Inzaghi','Giuseppe Meazza'),
-('Bayer Leverkusen',6,'Xabi Alonso','BayArena');
+('Bayer Leverkusen',6,'Xabi Alonso','BayArena'),
+('OL Marseille',3,'Roberto de Zerbi','Orange Velodrome'),
+('OL Lyon',3,'Fabio Grosso','Parc Olympique Lyonnais');
 
 insert into timovi_igraci
 (tim,igrac) values
@@ -97,9 +101,11 @@ insert into timovi_igraci
 (2,13),
 (2,14),
 (2,15),
-(3,19);
+(3,19),
+(11,21),
+(10,23);
 
 select * from igraci;
-select * from natjecanja;
 select * from timovi;
+select * from natjecanja;
 select * from timovi_igraci;
