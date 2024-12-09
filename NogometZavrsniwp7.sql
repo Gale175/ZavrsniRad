@@ -42,11 +42,17 @@ igrac int not null references igraci(sifra)
 
 insert into natjecanja
 (naziv,vrsta,drzava,sezona,pobjednik,najbolji_igrac) values
+--1
 ('Liga prvaka','Klupsko prvenstvo','Europa','2023/2024','Real Madrid','Vinicius Junior'),
+--2
 ('Premier League','Klupsko prvenstvo','Engleska','2023/2024','Manchester City','Kevin de Bruyne'),
+--3
 ('Francuska Liga','Klupsko prvenstvo','Francuska','2023/2024','Paris Saint Germain','Kylian Mbappe'),
+--4
 ('La Liga','Klupsko prvenstvo','Španjolska','2023/2024','Real Madrid','Vinicius Junior'),
+--5
 ('Serie A','Klupsko prvenstvo','Italija','2023/2024','Internacionale FC','Lautaro Martinez'),
+--6
 ('Bundesliga','Klupsko prvenstvo','Njemačka','2023/2024','Bayer Leverkusen','Florian Wirtz');
 
 insert into igraci
